@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<title>बंधुत्व, जाति तथा वर्ग — प्रोजेक्ट फाइल</title>
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;font-family:'Kalam',cursive;color:#26343f;background:#e9e2d0}
+.page{width:210mm;height:297mm;background:#fffdf4;position:relative;overflow:hidden;page-break-after:always;padding:11mm 10mm}
+.page:last-child{page-break-after:auto}
+.frame{position:absolute;top:6mm;left:6mm;right:6mm;bottom:6mm;border:2.6px solid #1a3c6e;border-radius:5mm;pointer-events:none}
+.frame::before{content:"";position:absolute;top:2mm;left:2mm;right:2mm;bottom:2mm;border:1.2px dashed #c9a227;border-radius:3.5mm}
+.corner{position:absolute;width:16mm;height:16mm;z-index:5}
+.corner svg{width:100%;height:100%}
+.c-tl{top:4.2mm;left:4.2mm}.c-tr{top:4.2mm;right:4.2mm;transform:scaleX(-1)}
+.c-bl{bottom:4.2mm;left:4.2mm;transform:scaleY(-1)}.c-br{bottom:4.2mm;right:4.2mm;transform:scale(-1)}
+.pghead{display:flex;align-items:center;gap:3mm;border-bottom:2px solid #1a3c6e;padding-bottom:2mm;margin-bottom:4.5mm}
+.pghead .dot{width:5mm;height:5mm;flex:none}
+.pghead .t{flex:1;text-align:center;font-size:13.5pt;color:#1a3c6e;letter-spacing:.4px}
+.pghead .sub{font-size:9.5pt;color:#7a6a45}
+.pgfoot{position:absolute;bottom:7.5mm;left:0;right:0;text-align:center;font-size:9.5pt;color:#8a6d1f}
+.pgfoot b{display:inline-block;background:#1a3c6e;color:#fffdf4;padding:.4mm 3.5mm;border-radius:2.5mm;font-weight:bold}
+.sec-t{font-family:'Yatra One',cursive;text-align:center;font-size:19pt;color:#b3001b;margin:1mm 0 4.5mm;line-height:1.25}
+.sec-t small{display:block;font-family:'Kalam',cursive;font-size:10.5pt;color:#7a6a45;margin-top:.5mm}
+.rule{display:flex;justify-content:center;margin:-2.5mm 0 4mm}
+.rule svg{width:70mm;height:4mm}
+.body{font-size:11.5pt;line-height:1.62;text-align:justify;color:#2d3b46}
+.body p{margin:0 0 2.6mm}
+.body .lead{font-size:12.5pt}
+b.hd{color:#1a3c6e}
+.mrk{background:linear-gradient(transparent 55%, #ffe9a8 55%);padding:0 1px}
+.pt{font-weight:bold;color:#b3001b}
+.box{border:1.6px solid #1a3c6e;border-radius:3.5mm;padding:3mm 4mm;background:#fff;margin:3mm 0;position:relative}
+.box.y{background:#fff8e3;border-color:#c9a227}
+.box.g{background:#eef7ee;border-color:#2e7d32}
+.box .bt{display:inline-block;background:#1a3c6e;color:#fffdf4;font-size:10.5pt;padding:.6mm 4mm;border-radius:2.5mm;margin:-6.2mm 0 2mm -1mm;box-shadow:.6mm .6mm 0 #c9a227}
+.box.y .bt{background:#a67c00}.box.g .bt{background:#2e7d32}
+ul.tick{list-style:none;margin:0;padding:0}
+ul.tick li{padding-left:7mm;position:relative;margin-bottom:1.9mm;line-height:1.5}
+ul.tick li::before{content:"✦";position:absolute;left:1mm;top:-.3mm;color:#e67e22;font-size:11pt}
+table{width:100%;border-collapse:collapse;font-size:10.5pt;margin:2.5mm 0}
+th{background:#1a3c6e;color:#fffdf4;padding:1.8mm 2.4mm;border:1px solid #1a3c6e;font-weight:bold;text-align:center}
+td{border:1px solid #9db3c8;padding:1.7mm 2.6mm;vertical-align:top;line-height:1.4}
+tr:nth-child(even) td{background:#f2f7fc}
+td.c{text-align:center}
+.drw{text-align:center;margin:2.5mm 0 1mm}
+.drw svg{max-width:100%}
+.cap{font-size:9pt;color:#7a6a45;text-align:center;margin-top:.6mm;font-style:normal}
+.capt{font-size:9.5pt;color:#7a6a45;text-align:center;margin:1mm 0 2.5mm}
+.sig{display:flex;justify-content:space-between;margin-top:8mm}
+.sig .s{text-align:center;width:30%}
+.sig .ln{border-top:1.4px solid #26343f;margin-bottom:1.2mm;padding-top:.5mm;font-size:9pt;color:#5a6874}
+.blank{display:inline-block;min-width:52mm;border-bottom:1.3px dotted #5a6874}
+.stamp{position:absolute;transform:rotate(-8deg);border:2.2px solid #b3001b;color:#b3001b;border-radius:2mm;padding:1.4mm 4mm;font-size:11pt;font-weight:bold;opacity:.75;letter-spacing:1px}
+.tl{position:relative;margin:3mm 0 1mm;padding-left:26mm}
+.tl .yr{position:absolute;left:0;width:20mm;text-align:center;background:#e67e22;color:#fff;font-weight:bold;border-radius:2.5mm;padding:.7mm 0;font-size:10pt;box-shadow:.7mm .7mm 0 #b35900}
+.tl .tx{border-left:2.4px dotted #e67e22;padding:0 0 2.4mm 4mm;margin:-.6mm 0 0 0;min-height:4mm;font-size:10.8pt;line-height:1.45}
+.tl .tx span{color:#7a6a45;font-size:9.2pt}
+.two{display:flex;gap:4mm;align-items:flex-start}
+.two .l{flex:1.05}.two .r{flex:1}
+.quote{font-family:'Tiro Devanagari Hindi',serif;text-align:center;color:#1a3c6e;font-size:12.5pt;margin:3.5mm 0;border-top:1.4px solid #c9a227;border-bottom:1.4px solid #c9a227;padding:2.2mm 2mm;line-height:1.6}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Yatra+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+@media screen{
+  body{padding:14mm 0 20mm}
+  .printbar{position:fixed;top:0;left:0;right:0;z-index:99;background:#1a3c6e;color:#fffdf4;
+    padding:8px 16px;font-size:13.5px;display:flex;gap:10px;align-items:center;justify-content:center;
+    font-family:'Kalam','Noto Sans Devanagari',cursive;box-shadow:0 3px 10px rgba(0,0,0,.3)}
+  .printbar b{color:#ffd76a}
+  .dl{position:fixed;right:18px;bottom:18px;z-index:99;background:#b3001b;color:#fff;border:none;cursor:pointer;
+    font-family:'Kalam','Noto Sans Devanagari',cursive;font-size:16px;font-weight:bold;padding:12px 22px;border-radius:40px;
+    box-shadow:0 4px 14px rgba(179,0,27,.45);transition:.2s}
+  .dl:hover{transform:scale(1.05);background:#8f0015}
+  .page{margin:8mm auto;box-shadow:0 4px 22px rgba(0,0,0,.35)}
+}
+@media print{ .printbar,.dl{display:none!important} body{padding:0} .page{margin:0;box-shadow:none} }
+</style>
+<div class="printbar">📄 <b>प्रोजेक्ट फाइल</b> — डाउनलोड के लिए नीचे दाएँ <b>“PDF डाउनलोड करें”</b> बटन दबाएँ → डायलॉग में <b>Destination: Save as PDF</b> चुनें, <b>Margins: None</b> व <b>Background graphics ✓</b> रखें → <b>Save</b></div>
+<button class="dl" onclick="window.print()">⬇️ पूरी प्रोजेक्ट (17 पेज) PDF डाउनलोड करें</button>
+
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 : मुखपृष्ठ ═══════════════ -->
+<div class="page" id="p1">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/><circle cx="6" cy="6" r="2.2" fill="#b3001b"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/><circle cx="6" cy="6" r="2.2" fill="#b3001b"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/><circle cx="6" cy="6" r="2.2" fill="#b3001b"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/><circle cx="6" cy="6" r="2.2" fill="#b3001b"/></svg></div>
+
+<div style="text-align:center;margin-top:2mm">
+  <div style="font-size:12pt;color:#7a6a45;letter-spacing:.6px">विद्यालय का नाम</div>
+  <div style="font-family:'Tiro Devanagari Hindi',serif;font-size:20pt;color:#1a3c6e;border-bottom:2.2px solid #c9a227;display:inline-block;padding:0 14mm 1.4mm;margin-top:1mm">____________________________</div>
+</div>
+
+<div style="text-align:center;margin:4.5mm 0 2mm">
+  <span style="display:inline-block;border:2px solid #e67e22;border-radius:6mm;padding:1.6mm 9mm;font-family:'Yatra One',cursive;font-size:14.5pt;color:#e67e22;letter-spacing:1px">कक्षा 12 — इतिहास (भाग 1)</span>
+</div>
+
+<div style="text-align:center;margin:2.5mm 0 0">
+  <div style="font-size:11pt;color:#7a6a45">विषय 3 पर आधारित प्रोजेक्ट फाइल</div>
+  <h1 style="font-family:'Yatra One',cursive;font-size:31pt;color:#b3001b;margin:2mm 0 1mm;text-shadow:1.4px 1.4px 0 #ffe9a8;line-height:1.18">बंधुत्व, जाति तथा वर्ग</h1>
+  <div style="font-family:'Tiro Devanagari Hindi',serif;font-size:14pt;color:#1a3c6e;letter-spacing:2px">प्रारंभिक समाज • KINSHIP, CASTE AND CLASS</div>
+  <div style="font-size:11pt;color:#7a6a45;margin-top:1mm">एक समाज का अध्ययन — लगभग 600 ईसा-पूर्व से 600 ईस्वी तक</div>
+</div>
+
+<!-- वर्ण-पिरामिड चित्रण -->
+<div style="display:flex;justify-content:center;margin:4mm 0 1mm">
+<svg viewBox="0 0 340 226" style="width:120mm;height:80mm">
+  <rect x="2" y="2" width="336" height="222" rx="10" fill="#fff" stroke="#1a3c6e" stroke-width="2"/>
+  <!-- सूर्य-मोतीफ़ -->
+  <circle cx="170" cy="34" r="13" fill="#ffe9a8" stroke="#e67e22" stroke-width="2.2"/>
+  <path d="M170 14 v-6 M170 54 v6 M150 34 h-6 M190 34 h6 M156 20 l-4 -4 M184 20 l4 -4 M156 48 l-4 4 M184 48 l4 4" stroke="#e67e22" stroke-width="2" stroke-linecap="round"/>
+  <text x="170" y="39" font-size="10" text-anchor="middle" fill="#a35400" font-family="Kalam" font-weight="bold">धर्म</text>
+  <!-- पिरामिड : 4 स्तर -->
+  <polygon points="140,70 200,70 212,106 128,106" fill="#cfe6f7" stroke="#1a5f9e" stroke-width="2"/>
+  <text x="170" y="92" font-size="12" text-anchor="middle" fill="#15507f" font-family="Kalam" font-weight="bold">ब्राह्मण</text>
+  <polygon points="122,110 218,110 236,146 104,146" fill="#ffe0b2" stroke="#c96a1a" stroke-width="2"/>
+  <text x="170" y="132" font-size="12" text-anchor="middle" fill="#7a3e00" font-family="Kalam" font-weight="bold">क्षत्रिय</text>
+  <polygon points="98,150 242,150 264,186 76,186" fill="#c6f0d8" stroke="#1e8e4e" stroke-width="2"/>
+  <text x="170" y="172" font-size="12" text-anchor="middle" fill="#155c33" font-family="Kalam" font-weight="bold">वैश्य</text>
+  <polygon points="70,190 270,190 292,214 48,214" fill="#d9c2f0" stroke="#6a3fa0" stroke-width="2"/>
+  <text x="170" y="207" font-size="12" text-anchor="middle" fill="#4a2f7a" font-family="Kalam" font-weight="bold">शूद्र</text>
+  <!-- कर्तव्य संकेत -->
+  <text x="226" y="92" font-size="9.5" fill="#15507f" font-family="Kalam">अध्ययन • यज्ञ</text>
+  <text x="248" y="132" font-size="9.5" fill="#7a3e00" font-family="Kalam">शासन • रक्षा</text>
+  <text x="276" y="172" font-size="9.5" fill="#155c33" font-family="Kalam">कृषि • व्यापार</text>
+  <text x="302" y="207" font-size="9.5" fill="#4a2f7a" font-family="Kalam">सेवा</text>
+  <!-- तीर : जन्म बनाम कर्म -->
+  <path d="M44 60 q-14 100 22 146" fill="none" stroke="#b3001b" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="30" y="120" font-size="9" fill="#b3001b" font-family="Kalam" transform="rotate(78 30 120)">जन्म से जाति</text>
+</svg>
+</div>
+<div class="capt">चित्र 1 : वर्ण-पिरामिड — चार वर्ण एवं कर्तव्य (हस्तचित्रण)</div>
+
+<div class="stamp" style="top:9mm;right:12mm">2026–27</div>
+
+<div style="display:flex;gap:6mm;margin:4mm 6mm 0">
+  <div style="flex:1;border:1.8px solid #1a3c6e;border-radius:3.5mm;padding:3.5mm 5mm;background:#fff8e3">
+    <div style="font-family:'Yatra One',cursive;color:#b3001b;text-align:center;font-size:12.5pt;margin-bottom:2mm">प्रेषक</div>
+    <div style="font-size:11pt;line-height:2.05;color:#333">छात्र / छात्रा का नाम : <span class="blank" style="min-width:44mm"></span><br>कक्षा : <span style="display:inline-block;width:16mm;border-bottom:1.3px dotted #5a6874;text-align:center">12</span> &nbsp;&nbsp; अनुक्रमांक : <span class="blank" style="min-width:20mm"></span><br>विषय : <span style="display:inline-block;width:34mm;border-bottom:1.3px dotted #5a6874;text-align:center">इतिहास</span></div>
+  </div>
+  <div style="flex:1;border:1.8px solid #1a3c6e;border-radius:3.5mm;padding:3.5mm 5mm;background:#eef7ee">
+    <div style="font-family:'Yatra One',cursive;color:#2e7d32;text-align:center;font-size:12.5pt;margin-bottom:2mm">प्रति</div>
+    <div style="font-size:11pt;line-height:2.05;color:#333">विषय शिक्षक / शिक्षिका : <span class="blank" style="min-width:40mm"></span><br>विभाग : <span style="display:inline-block;width:38mm;border-bottom:1.3px dotted #5a6874;text-align:center">इतिहास</span><br>विद्यालय : <span style="display:inline-block;width:38mm;border-bottom:1.3px dotted #5a6874;text-align:center">__________</span></div>
+  </div>
+</div>
+
+<div style="text-align:center;margin-top:4mm;font-size:10.5pt;color:#7a6a45">परियोजना कार्य • प्रोजेक्ट फाइल • शैक्षिक सत्र 2026–27</div>
+</div>
+
+<!-- ═══════════════ PAGE 2 : प्रमाण-पत्र ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+
+<div class="sec-t" style="margin-top:5mm">प्रमाण-पत्र</div>
+<div class="rule"><svg viewBox="0 0 200 12"><path d="M0 6 H78 M122 6 H200" stroke="#c9a227" stroke-width="2"/><path d="M100 0 L106 6 L100 12 L94 6 Z" fill="#b3001b"/><circle cx="86" cy="6" r="2" fill="#e67e22"/><circle cx="114" cy="6" r="2" fill="#e67e22"/></svg></div>
+
+<div class="drw"><svg viewBox="0 0 120 74" style="width:52mm;height:32mm">
+  <path d="M22 70 V40 L60 22 L98 40 V70" fill="#fff8e3" stroke="#1a3c6e" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M22 40 L60 22 L98 40 L60 58 Z" fill="#cfe6f7" stroke="#1a3c6e" stroke-width="2.4" stroke-linejoin="round"/>
+  <rect x="52" y="34" width="16" height="12" rx="2" fill="#1a3c6e"/>
+  <path d="M44 12 q16 -12 32 0" stroke="#c9a227" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <circle cx="18" cy="18" r="3" fill="#e67e22"/><circle cx="104" cy="14" r="2.4" fill="#2e7d32"/><circle cx="112" cy="24" r="2" fill="#b3001b"/>
+  <path d="M46 62 h28 M50 66 h20" stroke="#b9c4d0" stroke-width="2" stroke-linecap="round"/>
+</svg></div>
+<div class="capt">— प्रमाणित प्रति —</div>
+
+<div style="font-family:'Tiro Devanagari Hindi',serif;font-size:12.8pt;line-height:2.05;color:#26343f;text-align:justify;margin:3mm 3mm 0">
+<p>यह प्रमाणित किया जाता है कि श्रीमान / श्रीमती <span class="blank" style="min-width:62mm"></span> ने कक्षा <b>12</b>, अनुक्रमांक <span class="blank" style="min-width:24mm"></span> में विद्यालय की ओर से <b style="color:#b3001b">इतिहास (भाग 1)</b> विषय के विषय-क्षेत्र <b>«बंधुत्व, जाति तथा वर्ग : प्रारंभिक समाज»</b> पर शोध, तथ्य-संकलन एवं चित्रांकन सहित यह परियोजना (प्रोजेक्ट फाइल) पूर्णतः स्वयं तैयार की है।</p>
+<p>यह परियोजना <b>C.B.S.E. के आंतरिक मूल्यांकन</b> हेतु निर्धारित पाठ्यक्रम एवं प्रारूप के अनुसार, मार्गदर्शक के निर्देशों में रहकर, शैक्षिक सत्र <b>2026–27</b> में नियमित रूप से पूर्ण की गई है। इस परियोजना की सामग्री सत्य एवं पाठ्य-आधारित है और इसे <b>संतोषजनक</b> स्तर पर पूर्ण होने का प्रमाणन दिया जाता है।</p>
+</div>
+
+<div class="box y" style="margin-top:4mm"><span class="bt">परियोजना का विवरण</span>
+<table style="margin:1mm 0 0;font-size:10.5pt">
+<tr><td style="width:38%"><b>विषय</b></td><td>इतिहास — इतिहास भाग 1 (NCERT)</td></tr>
+<tr><td><b>विषय-क्षेत्र</b></td><td>विषय 3 — बंधुत्व, जाति तथा वर्ग : प्रारंभिक समाज</td></tr>
+<tr><td><b>प्रकार</b></td><td>परियोजना प्रतिवेदन (प्रोजेक्ट फाइल) — 17 पृष्ठ</td></tr>
+<tr><td><b>प्रस्तुति दिवस</b></td><td>तिथि : <span class="blank" style="min-width:30mm"></span></td></tr>
+</table></div>
+
+<div class="sig">
+  <div class="s"><div class="ln"></div>हस्ताक्षर — विषय शिक्षक<br><span style="font-size:8.6pt">(मूल्यांकन करता/करती है)</span></div>
+  <div class="s"><div class="ln"></div>हस्ताक्षर — प्रधानाचार्य<br><span style="font-size:8.6pt">(प्राचार्य / प्रधानाध्यापक)</span></div>
+  <div class="s"><div class="ln"></div>हस्ताक्षर — बाह्य परीक्षक<br><span style="font-size:8.6pt">(यदि उपस्थित हों)</span></div>
+</div>
+<div class="pgfoot">स्थान : <span class="blank" style="min-width:30mm"></span> &nbsp;&nbsp; तिथि : <span class="blank" style="min-width:30mm"></span> &nbsp;•&nbsp; पृष्ठ 2</div>
+</div>
+
+<!-- ═══════════════ PAGE 3 : आभार ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+
+<div class="sec-t" style="margin-top:5mm;color:#2e7d32">कृतज्ञता — आभार</div>
+<div class="rule"><svg viewBox="0 0 200 12"><path d="M0 6 H78 M122 6 H200" stroke="#2e7d32" stroke-width="2"/><path d="M100 0 L106 6 L100 12 L94 6 Z" fill="#2e7d32"/><circle cx="86" cy="6" r="2" fill="#e67e22"/><circle cx="114" cy="6" r="2" fill="#e67e22"/></svg></div>
+
+<div class="drw"><svg viewBox="0 0 150 80" style="width:62mm;height:33mm">
+  <g transform="rotate(-4 75 40)">
+    <path d="M18 50 q20 -26 44 -10 l14 8 q6 3 2 8 l-3 3 q-4 3 -9 0 l-12 -7" fill="#ffe0b2" stroke="#a35400" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M132 50 q-20 -26 -44 -10 l-14 8 q-6 3 -2 8 l3 3 q4 3 9 0 l12 -7" fill="#ffe0b2" stroke="#a35400" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M66 44 q9 -6 18 0 q-9 8 -18 0 Z" fill="#ffd9b3" stroke="#a35400" stroke-width="2"/>
+    <path d="M40 22 q4 -10 12 -4 M110 22 q-4 -10 -12 -4" stroke="#c9a227" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="75" cy="16" r="7" fill="#fff" stroke="#1a3c6e" stroke-width="2"/>
+    <path d="M70 16 h10 M75 11 v10" stroke="#1a3c6e" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+</svg></div>
+<div class="capt">सहयोग की भावना — हस्तचित्रण</div>
+
+<div class="body" style="margin:2mm 2mm 0;font-size:12pt">
+<p>इस परियोजना कार्य के पूर्ण होने का श्रेय मात्र अपना नहीं है; इसमें अनेक हाथों का सहयोग और मार्गदर्शन निहित है। इस अवसर पर मैं अपनी गहन कृतज्ञता प्रकट करता / करती हूँ —</p>
+<p>सर्वप्रथम मैं अपने <b class="hd">विषय शिक्षक</b> <span class="blank" style="min-width:52mm"></span> जी का आभारी हूँ, जिनके निरंतर मार्गदर्शन, उत्तेजक बहसों और सटीक सुझावों ने ही «बंधुत्व, जाति तथा वर्ग» विषय-क्षेत्र की इस जटिल विषय-वस्तु को इतनी सरल एवं सुंदर रूप में ढालने की दिशा दिखाई।</p>
+<p>मैं अपने <b class="hd">प्रधानाचार्य</b> <span class="blank" style="min-width:52mm"></span> जी का आभार व्यक्त करता हूँ, जिन्होंने विद्यालय की पुस्तकालय सुविधाओं तथा परियोजना कार्य की आवश्यक अनुमति देकर अनुकूल वातावरण उपलब्ध कराया।</p>
+<p>मेरा विशेष आभार अपने <b class="hd">माता-पिता</b> का है, जिनके निरंतर उत्साहवर्धन, धैर्य और साधनों के सहयोग के बिना यह कार्य संभव नहीं था। साथ ही <b class="hd">मित्रों एवं सहपाठियों</b> का धन्यवाद, जिनकी चर्चाओं और जानकारी साझा करने की प्रवृत्ति ने परियोजना को समृद्ध किया।</p>
+</div>
+
+<div class="box g"><span class="bt">परियोजना में मेरी सीख</span>
+<ul class="tick" style="margin-top:1mm">
+<li>समाज को सिर्फ़ राजाओं-युद्धों से नहीं, <b>रिश्तों, विवाह और जाति के नियमों</b> से भी समझा जा सकता है।</li>
+<li>शास्त्रों में लिखा <b>आदर्श</b> और अभिलेखों-कथाओं में झलकता <b>व्यवहार</b> अक्सर अलग-अलग होता है।</li>
+<li>हर युग में कुछ लोग असमानता को चुनौती देते रहे — यह चेतना <b>आज भी जीवित</b> है।</li>
+</ul></div>
+
+<div class="sig">
+  <div class="s"><div class="ln"></div>नाम — <span style="font-size:10pt">__________</span><br><span style="font-size:8.6pt">कक्षा 12, अनुक्रमांक ____</span></div>
+  <div class="s" style="padding-top:6mm;font-family:'Tiro Devanagari Hindi',serif;font-size:13pt;color:#1a3c6e">सधन्यवाद सहित,</div>
+  <div class="s"><div class="ln"></div>विषय शिक्षक<br><span style="font-size:8.6pt">इतिहास विभाग</span></div>
+</div>
+<div class="pgfoot">— आभार — &nbsp;•&nbsp; पृष्ठ 3</div>
+</div>
+
+<!-- ═══════════════ PAGE 4 : विषय-सूची ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#b3001b"/><circle cx="10" cy="58" r="3.4" fill="#b3001b"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#b3001b"/><circle cx="10" cy="58" r="3.4" fill="#b3001b"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#b3001b"/><circle cx="10" cy="58" r="3.4" fill="#b3001b"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#b3001b"/><circle cx="10" cy="58" r="3.4" fill="#b3001b"/></svg></div>
+
+<div class="sec-t" style="margin-top:5mm">विषय-सूची (अनुक्रमणिका)</div>
+<div class="rule"><svg viewBox="0 0 200 12"><path d="M0 6 H78 M122 6 H200" stroke="#1a3c6e" stroke-width="2"/><path d="M100 0 L106 6 L100 12 L94 6 Z" fill="#1a3c6e"/></svg></div>
+
+<table style="font-size:11.5pt">
+<tr><th style="width:12%">क्रम</th><th>विषय / शीर्षक</th><th style="width:16%">चित्र</th><th style="width:16%">पृष्ठ</th></tr>
+<tr><td class="c">1</td><td><b>मुखपृष्ठ</b> — वर्ण-पिरामिड चित्रण</td><td class="c"><b style="color:#1a5f9e">✦</b></td><td class="c">1</td></tr>
+<tr><td class="c">2</td><td><b>प्रमाण-पत्र</b></td><td class="c"><b style="color:#a67c00">◆</b></td><td class="c">2</td></tr>
+<tr><td class="c">3</td><td><b>कृतज्ञता</b> (आभार)</td><td class="c"><b style="color:#2e7d32">◆</b></td><td class="c">3</td></tr>
+<tr><td class="c">4</td><td><b>विषय-सूची</b></td><td class="c"><b style="color:#1a3c6e">✦</b></td><td class="c">4</td></tr>
+<tr><td class="c">5</td><td><b>प्रस्तावना</b> — अध्ययन का उद्देश्य</td><td class="c"><b style="color:#1a5f9e">●</b></td><td class="c">5</td></tr>
+<tr><td class="c">6</td><td><b>स्रोत-सामग्री और महाभारत का क्रिटिकल एडिशन</b></td><td class="c"><b style="color:#a35400">✦</b></td><td class="c">6</td></tr>
+<tr><td class="c">7</td><td><b>परिवार एवं बंधुता</b> — पितृसत्ता और वंश</td><td class="c"><b style="color:#2e7d32">◆</b></td><td class="c">7</td></tr>
+<tr><td class="c">8</td><td><b>विवाह की व्यवस्थाएँ</b> — आठ प्रकार, गोत्र</td><td class="c"><b style="color:#b3001b">■</b></td><td class="c">8</td></tr>
+<tr><td class="c">9</td><td><b>वर्ण-व्यवस्था</b> — चार वर्ण, कर्तव्य एवं मेगस्थनीज</td><td class="c"><b style="color:#1a5f9e">▲</b></td><td class="c">9</td></tr>
+<tr><td class="c">10</td><td><b>वर्ण के बाहर</b> — चंडाल और अछूत श्रमिक</td><td class="c"><b style="color:#155c33">◆</b></td><td class="c">10</td></tr>
+<tr><td class="c">11</td><td><b>श्रमिकों का जीवन</b> — दास, कर्मकार एवं तमिलकम्</td><td class="c"><b style="color:#a35400">✦</b></td><td class="c">11</td></tr>
+<tr><td class="c">12</td><td><b>जाति-व्यवस्था के बाहर</b> — संन्यासी परंपरा</td><td class="c"><b style="color:#1a3c6e">●</b></td><td class="c">12</td></tr>
+<tr><td class="c">13</td><td><b>बेगमपुरा : एक कल्पना</b> — अछूतों का सपना</td><td class="c"><b style="color:#b3001b">■</b></td><td class="c">13</td></tr>
+<tr><td class="c">14</td><td><b>स्त्रियाँ, संपत्ति और अधिकार</b> — प्रभावती गुप्ता</td><td class="c"><b style="color:#a67c00">✦</b></td><td class="c">14</td></tr>
+<tr><td class="c">15</td><td><b>समग्र दृष्टि</b> — कालक्रम एवं तुलनात्मक तालिका</td><td class="c"><b style="color:#2e7d32">◆</b></td><td class="c">15</td></tr>
+<tr><td class="c">16</td><td><b>निष्कर्ष</b></td><td class="c"><b style="color:#1a3c6e">●</b></td><td class="c">16</td></tr>
+<tr><td class="c">17</td><td><b>संदर्भ सूची</b> (Bibliography)</td><td class="c"><b style="color:#b3001b">✦</b></td><td class="c">17</td></tr>
+</table>
+
+<div class="box" style="margin-top:4.5mm"><span class="bt">परियोजना की विशेषताएँ</span>
+<div class="two" style="margin-top:1mm">
+<ul class="tick" style="flex:1;margin:0"><li>NCERT पाठ्य-आधारित तथ्य</li><li>हस्तचित्रण (ड्रॉइंग) एवं वंश-वृक्ष</li><li>कालक्रम एवं तालिकाएँ</li></ul>
+<ul class="tick" style="flex:1;margin:0"><li>शास्त्र-अभिलेख-कथा की तुलना</li><li>मूल उद्धरणों के भावानुवाद</li><li>स्पष्ट निष्कर्ष एवं संदर्भ</li></ul>
+</div></div>
+
+<div class="drw" style="margin-top:4mm"><svg viewBox="0 0 220 40" style="width:90mm;height:17mm">
+  <path d="M6 30 q22 -22 44 -2 q22 20 44 -2 q22 -20 44 2 q22 20 44 -2 q16 -12 28 -4" fill="none" stroke="#e67e22" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="10" cy="30" r="3" fill="#b3001b"/><circle cx="212" cy="26" r="3" fill="#b3001b"/>
+  <path d="M96 12 l6 8 M112 10 l-4 9" stroke="#c9a227" stroke-width="2.4" stroke-linecap="round"/>
+</svg></div>
+<div class="pgfoot">— विषय-सूची — &nbsp;•&nbsp; पृष्ठ 4</div>
+</div>
+<!-- ═══════════════ PAGE 5 : प्रस्तावना ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t">प्रस्तावना</div>
+<div class="rule"><svg viewBox="0 0 200 12"><path d="M0 6 H78 M122 6 H200" stroke="#c9a227" stroke-width="2"/><path d="M100 0 L106 6 L100 12 L94 6 Z" fill="#b3001b"/></svg></div>
+
+<div class="drw"><svg viewBox="0 0 150 80" style="width:60mm;height:32mm">
+  <rect x="26" y="10" width="98" height="58" rx="4" fill="#fff8e3" stroke="#a35400" stroke-width="2.4"/>
+  <path d="M26 18 h98 M26 26 h98 M26 34 h98" stroke="#d9b98a" stroke-width="2"/>
+  <path d="M124 12 q12 26 0 54" fill="none" stroke="#a35400" stroke-width="2.4"/>
+  <path d="M26 12 q-12 26 0 54" fill="none" stroke="#a35400" stroke-width="2.4"/>
+  <circle cx="60" cy="48" r="7" fill="#cfe6f7" stroke="#1a5f9e" stroke-width="2"/>
+  <path d="M74 44 h34 M74 52 h26" stroke="#7a6a45" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="20" cy="20" r="3.4" fill="#e67e22"/><circle cx="134" cy="16" r="2.6" fill="#2e7d32"/><circle cx="130" cy="66" r="3" fill="#b3001b"/>
+</svg></div>
+<div class="capt">प्राचीन पाण्डुलिपि — अतीत की बातें सुनाने का स्रोत</div>
+
+<div class="body" style="margin-top:1.5mm">
+<p class="lead"><b class="hd">इतिहास केवल राजाओं और युद्धों का विवरण नहीं</b> — इसकी सबसे सजीव धड़कन तो <span class="mrk">घरों, परिवारों और रिश्तों</span> में बजती है। कौन किससे विवाह करे? बेटे ही क्यों वंश आगे बढ़ाएँ? काम बाँटने के नियम क्यों <b class="pt">जन्म</b> से तय माने जाने लगे? — NCERT इतिहास भाग 1 का विषय 3 इन्हीं प्रश्नों को प्रारंभिक भारतीय समाज (लगभग <b>600 ईसा-पूर्व से 600 ईस्वी</b>) के प्रसंग में उठाता है।</p>
+<p>इस परियोजना में हमने महाभारत की कथा, धर्मशास्त्रीय नियमों (मनुस्मृति आदि), अभिलेखों (सतवाहन तथा गुप्तकालीन ताम्रपत्र), बौद्ध-जैन कथाओं और संगम साहित्य के सहारे <b>बंधुता, विवाह, वर्ण, जाति, श्रम और अधिकार</b> की परतें खोली हैं। साथ ही यह भी देखा है कि <b class="pt">शास्त्रों का आदर्श</b> और <b class="pt">जीवन का व्यवहार</b> अक्सर एक-दूसरे से टकराते हैं — और इसी टकराव में समाज का वास्तविक चेहरा झलकता है।</p>
+</div>
+
+<div class="box y"><span class="bt">परियोजना के उद्देश्य</span>
+<ul class="tick" style="margin-top:1mm">
+<li>प्रारंभिक भारतीय समाज में <b>बंधुता (kinship)</b> एवं परिवार की संरचना समझना।</li>
+<li><b>विवाह-नियम</b>, गोत्र-प्रथा और उनके व्यावहारिक विचलनों की पहचान।</li>
+<li><b>वर्ण-जाति-व्यवस्था</b> के आदर्श, श्रम-विभाजन और उसके बाहर खड़े लोगों का अध्ययन।</li>
+<li>स्रोतों की <b>आलोचनात्मक पढ़ाई</b> — कौन-सा स्रोत क्या और क्यों कहता है?</li>
+<li>चित्र, वंश-वृक्ष, तालिका और कालक्रम से <b>विश्लेषणात्मक कौशल</b> विकसित करना।</li>
+</ul></div>
+
+<div class="quote">“ रिश्ते सिर्फ़ घरों के नहीं, राज्यों के भी होते हैं — वंश, विवाह और वर्ग मिलकर ही प्रारंभिक समाज का ढाँचा बनाते हैं। ”</div>
+
+<div class="box g" style="margin-top:2mm"><span class="bt">अध्ययन-पद्धति</span>
+<div style="font-size:10.8pt;line-height:1.55;margin-top:1mm">पाठ्यपुस्तक (NCERT, इतिहास भाग 1, विषय 3) के केंद्रीकरण के साथ मूल स्रोतों — महाभारत (क्रिटिकल एडिशन), मनुस्मृति, अभिलेख-संग्रह, जातक तथा संगम साहित्य — के तथ्य संकलित कर <b>वर्णन, तालिका, कालक्रम और हस्तचित्रण</b> के माध्यम से प्रस्तुत किया गया है। तिथियाँ विद्वानों में भिन्न हो सकती हैं; लगभग-काल ही दिया गया है।</div></div>
+
+<div class="pgfoot"><b>5</b> &nbsp;•&nbsp; प्रस्तावना</div>
+</div>
+
+<!-- ═══════════════ PAGE 6 : स्रोत और क्रिटिकल एडिशन ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#1a3c6e"/><circle cx="10" cy="58" r="3.4" fill="#1a3c6e"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#1a3c6e"/><circle cx="10" cy="58" r="3.4" fill="#1a3c6e"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#1a3c6e"/><circle cx="10" cy="58" r="3.4" fill="#1a3c6e"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#1a3c6e"/><circle cx="10" cy="58" r="3.4" fill="#1a3c6e"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t" style="font-size:17pt">स्रोत-सामग्री और महाभारत का क्रिटिकल एडिशन</div>
+
+<div class="body">
+<p>समाज का इतिहास लिखने के लिए विविध प्रकार की स्रोत-सामग्री उपलब्ध है — हर स्रोत अपनी दृष्टि से अतीत को देखता है, इसलिए <b class="hd">स्रोतों की तुलना</b> ही वास्तविक इतिहास-लेखन का पहला कदम है।</p>
+</div>
+
+<table style="font-size:10pt">
+<tr><th>स्रोत</th><th>प्रकार</th><th>क्या जानकारी देता है</th></tr>
+<tr><td><b>महाभारत</b></td><td class="c">महाकाव्य (इतिहास-कथा)</td><td>राजवंश, विवाह, बंधु-संबंध, संघर्ष — कथा के माध्यम से</td></tr>
+<tr><td><b>धर्मसूत्र / धर्मशास्त्र</b></td><td class="c">शास्त्रीय नियम-पुस्तकें</td><td>वर्ण-कर्तव्य, विवाह-नियम, अधिकार — <b>आदर्श</b> की दृष्टि</td></tr>
+<tr><td><b>अभिलेख (शिला-ताम्रपत्र)</b></td><td class="c">प्रामाणिक रिकॉर्ड</td><td>भूमि-दान, गोत्र, संपत्ति — <b>व्यवहार</b> की दृष्टि</td></tr>
+<tr><td><b>जातक, थेरीगाथा</b></td><td class="c">बौद्ध/जैन साहित्य</td><td>दास-श्रमिक, संन्यासी, स्त्रियाँ — <b>विकल्पों</b> की दृष्टि</td></tr>
+<tr><td><b>संगम साहित्य</b></td><td class="c">तमिल काव्य</td><td>दक्षिण भारत का समाज — उत्तर से भिन्न छवि</td></tr>
+<tr><td><b>मेगस्थनीज की ‘इंडिका’</b></td><td class="c">विदेशी यात्री-विवरण</td><td>बाहरी आँखों से समाज — तुलना का आईना</td></tr>
+</table>
+<div class="capt">तालिका 1 : प्रमुख स्रोत एवं उनकी दृष्टि</div>
+
+<div class="two">
+<div class="l">
+<div class="box" style="margin-top:1mm"><span class="bt">क्रिटिकल एडिशन क्या है?</span>
+<div style="font-size:10.6pt;line-height:1.55;margin-top:1mm">एक ग्रंथ के <b>सैकड़ों हस्तलिखित संस्करणों</b> की तुलना कर व्याकरणिक-प्रमाण आदि के आधार पर <b class="pt">सबसे पुराना उपलब्ध मूल पाठ</b> खोजने का वैज्ञानिक प्रयास। उसमें बाद की परतें हटाई जाती हैं और भिन्नताएँ संपादित की जाती हैं।</div></div>
+</div>
+<div class="r">
+<div class="drw" style="margin:0"><svg viewBox="0 0 150 96" style="width:100%;max-width:62mm">
+  <rect x="14" y="8" width="52" height="72" rx="4" fill="#fff8e3" stroke="#a35400" stroke-width="2.2"/>
+  <rect x="84" y="8" width="52" height="72" rx="4" fill="#eef7ee" stroke="#2e7d32" stroke-width="2.2"/>
+  <path d="M22 18 h36 M22 28 h36 M22 38 h36 M22 48 h36 M22 58 h36" stroke="#d9b98a" stroke-width="2"/>
+  <path d="M92 18 h36 M92 28 h36 M92 38 h36 M92 48 h36 M92 58 h36" stroke="#a8cfab" stroke-width="2"/>
+  <path d="M40 82 h38 M46 90 h26" stroke="#1a3c6e" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="40" y="86" font-size="0" fill="#1a3c6e">.</text>
+</svg>
+<div class="cap">चित्र 2 : पाण्डुलिपियों की तुलना — क्रिटिकल एडिशन</div></div>
+</div>
+</div>
+
+<div class="box y"><span class="bt">महाभारत का क्रिटिकल एडिशन — तथ्य-पट्ट</span>
+<table style="margin:1mm 0 0;font-size:10.2pt">
+<tr><td style="width:44%"><b>स्थान</b></td><td>भंडारकर प्राच्यविद्या अनुसंधान संस्थान (BORI), पुणे</td></tr>
+<tr><td><b>कार्य-अवधि</b></td><td>1919 से लगभग 47 वर्ष — अंतिम खंड 1966 में</td></tr>
+<tr><td><b>प्रथम महासंपादक</b></td><td>विष्णु एस. सुकथांकर</td></tr>
+<tr><td><b>परिणाम</b></td><td>परंपरागत ‘शतसाहस्री’ (लगभग 1,00,000 श्लोक) की तुलना में क्रिटिकल एडिशन <b class="pt">लगभग 75,000 श्लोक</b></td></tr>
+<tr><td><b>महत्व</b></td><td>ग्रंथ की <b>बहु-स्तरीय रचना</b> प्रकट हुई — कथा प्राचीन, संकलन लगभग 1000 वर्षों में</td></tr>
+</table></div>
+
+<div class="box g" style="margin-top:2mm"><span class="bt">क्या आप जानते हैं?</span>
+<div style="font-size:10.6pt;line-height:1.55;margin-top:1mm">परंपरा महाभारत की रचना <b>वेदव्यास</b> से मानती है, पर इतने विशाल ग्रंथ की बहु-स्तरीय परतें बताती हैं कि उसमें <b>कई कालों और कई कथाकारों</b> की आवाज़ें मिश्रित हैं। महाभारत निरंतर पढ़ा-सुनाया गया और हर युग में उसमें कुछ जुड़ता गया।</div></div>
+
+<div class="pgfoot"><b>6</b> &nbsp;•&nbsp; स्रोत एवं क्रिटिकल एडिशन</div>
+</div>
+
+<!-- ═══════════════ PAGE 7 : परिवार एवं बंधुता ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t" style="font-size:17pt">परिवार एवं बंधुता : पितृसत्ता और वंश</div>
+
+<div class="body">
+<p class="lead"><b class="hd">बंधुता (Kinship)</b> अर्थात् रक्त-विवाह के सूत्रों से बने रिश्तों की जाली। प्रारंभिक भारतीय समाज में इसका प्रबल ढाँचा था <b class="pt">पितृसत्तात्मक व्यवस्था (Patriliny)</b> — जिसमें वंश, संपत्ति और गद्दी <b>पिता से पुत्रों</b> को मिलती थी और लड़कियाँ विवाह के बाद पति के घर चली जाती थीं। राजवंशों में पितृसत्ता और भी स्पष्ट थी — <b>हस्तिनापुर की गद्दी पुत्र ही विरासत में लेता था</b>।</p>
+</div>
+
+<div class="drw" style="margin:2mm 0 1mm"><svg viewBox="0 0 320 118" style="width:120mm;height:44mm">
+  <rect x="128" y="4" width="64" height="18" rx="4" fill="#fff8e3" stroke="#a35400" stroke-width="2"/>
+  <text x="160" y="17" font-size="10.5" text-anchor="middle" fill="#7a3e00" font-family="Kalam" font-weight="bold">शंतनु</text>
+  <path d="M160 22 v8 M160 30 h-58 M160 30 h58" stroke="#7a6a45" stroke-width="1.8" fill="none"/>
+  <rect x="70" y="38" width="64" height="18" rx="4" fill="#cfe6f7" stroke="#1a5f9e" stroke-width="2"/>
+  <text x="102" y="51" font-size="10" text-anchor="middle" fill="#15507f" font-family="Kalam" font-weight="bold">विचित्रवीर्य</text>
+  <rect x="186" y="38" width="64" height="18" rx="4" fill="#eef7ee" stroke="#2e7d32" stroke-width="2"/>
+  <text x="218" y="51" font-size="10" text-anchor="middle" fill="#155c33" font-family="Kalam" font-weight="bold">व्यास (नियोग)</text>
+  <path d="M102 56 v8 M102 64 h-34 M102 64 h102 M218 56 v8" stroke="#7a6a45" stroke-width="1.8" fill="none"/>
+  <rect x="36" y="72" width="64" height="18" rx="4" fill="#ffe0b2" stroke="#c96a1a" stroke-width="2"/>
+  <text x="68" y="85" font-size="10" text-anchor="middle" fill="#7a3e00" font-family="Kalam" font-weight="bold">धृतराष्ट्र</text>
+  <rect x="138" y="72" width="64" height="18" rx="4" fill="#ffe0b2" stroke="#c96a1a" stroke-width="2"/>
+  <text x="170" y="85" font-size="10" text-anchor="middle" fill="#7a3e00" font-family="Kalam" font-weight="bold">पांडु</text>
+  <path d="M68 90 v8 M170 90 v8 M68 98 h-34 M170 98 h66" stroke="#7a6a45" stroke-width="1.8" fill="none"/>
+  <rect x="6" y="106" width="86" height="12" rx="3" fill="#d9c2f0" stroke="#6a3fa0" stroke-width="1.8"/>
+  <text x="49" y="115.5" font-size="9" text-anchor="middle" fill="#4a2f7a" font-family="Kalam" font-weight="bold">कौरव — 100 पुत्र</text>
+  <rect x="110" y="106" width="88" height="12" rx="3" fill="#c6f0d8" stroke="#1e8e4e" stroke-width="1.8"/>
+  <text x="154" y="115.5" font-size="9" text-anchor="middle" fill="#155c33" font-family="Kalam" font-weight="bold">पांडव — 5 पुत्र</text>
+  <text x="238" y="115" font-size="9" fill="#7a6a45" font-family="Kalam">वंश पिता → पुत्र</text>
+</svg></div>
+<div class="capt">चित्र 3 : कुरु-वंश का सरलीकृत वंश-वृक्ष — पितृसत्ता की कथा</div>
+
+<div class="two">
+<div class="l">
+<div class="box y" style="margin-top:1mm"><span class="bt">पुत्र की चिंता</span>
+<ul class="tick" style="margin-top:.8mm;font-size:10.4pt">
+<li><b>पांडु</b> शाप से निःसंतान — वंश टूटने की आशंका।</li>
+<li><b>कुंती</b> वरदान से पुत्र-प्राप्ति — पुत्र ही वंश-धारक।</li>
+<li><b>द्रौपदी</b> का पाँच पांडवों से विवाह — <b class="pt">बहुपत्नी-विवाह</b>, सामान्य नियम से विचलन।</li>
+</ul></div>
+</div>
+<div class="r">
+<div class="box g" style="margin-top:1mm"><span class="bt">महाभारत में वंश-सूची</span>
+<div style="font-size:10.4pt;line-height:1.55;margin-top:.8mm">«शिशुपाल-वध» पर्व में यज्ञ में आए <b>राजाओं की वंशावलियाँ</b> गिनाई गईं — दर्शाता है कि <b class="pt">पितृसत्तात्मक वंश-परंपरा</b> ही राजनीतिक वैधता का मानक थी।</div></div>
+</div>
+</div>
+
+<div class="box" style="margin-top:1.5mm"><span class="bt">नियम और अपवाद साथ-साथ</span>
+<div style="font-size:10.7pt;line-height:1.58;margin-top:1mm">शास्त्रों में आदर्श <b>पितृसत्ता</b> है, पर कथाओं में <b>मातृ-पक्ष की अनिवार्य भूमिका</b> भी झलकती है — कुंती का वरदान, गांधारी का प्रभाव, सतवाहन अभिलेखों में <b class="pt">माता के गोत्र</b> का उल्लेख (जैसे <b>गौतमीपुत्र सातकर्णि</b> — ‘गौतमी का पुत्र’)। यानी समाज में पुरुष-प्रधानता के बीच <b>मातृ-संबंधों की मजबूत पहचान</b> भी जीवित थी।</div></div>
+
+<div class="quote" style="margin-top:2mm">“ वंश बचाने की चिंता ही पितृसत्ता की सबसे बड़ी रक्षक थी — इसी चिंता ने विवाह और उत्तराधिकार के नियम बनाए। ”</div>
+
+<div class="pgfoot"><b>7</b> &nbsp;•&nbsp; परिवार एवं बंधुता</div>
+</div>
+
+<!-- ═══════════════ PAGE 8 : विवाह की व्यवस्थाएँ ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t" style="font-size:17pt">विवाह की व्यवस्थाएँ : आठ प्रकार, गोत्र और नियम</div>
+
+<div class="two">
+<div class="l" style="flex:1">
+<div class="drw" style="margin:0"><svg viewBox="0 0 130 92" style="width:100%;max-width:56mm">
+  <path d="M42 30 q23 -18 46 0 v40 q0 8 -8 8 H50 q-8 0 -8 -8 Z" fill="#fff8e3" stroke="#c9a227" stroke-width="2.4"/>
+  <path d="M38 30 h54" stroke="#c9a227" stroke-width="2.4"/>
+  <path d="M42 30 q6 -14 12 -4 M54 30 q6 -16 12 -6 M66 30 q6 -14 12 -4 M78 30 q4 -12 8 -2" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="65" cy="16" rx="9" ry="11" fill="#ffd9b3" stroke="#a35400" stroke-width="2.2"/>
+  <path d="M62 12 q3 -3 6 0" stroke="#a35400" stroke-width="1.6" fill="none"/>
+  <path d="M50 60 h30 M52 68 h26" stroke="#b9c4d0" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="24" cy="22" r="3" fill="#e67e22"/><circle cx="108" cy="18" r="2.6" fill="#b3001b"/><circle cx="112" cy="70" r="3" fill="#2e7d32"/>
+  <path d="M18 74 q6 -4 12 0" stroke="#c9a227" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg></div>
+<div class="cap">चित्र 4 : मंगल-कलश — विवाह का प्रतीक</div>
+</div>
+<div class="r" style="flex:1.15">
+<div class="body" style="font-size:10.9pt">
+<p style="margin-bottom:1.6mm"><b class="hd">विवाह बंधुता का सबसे सक्रिय नियम</b> था — वह नया परिवार बनाता, वर्णों-गोत्रों के बीच रिश्ते जोड़ता और संपत्ति की दिशा तय करता था। <b class="pt">मनुस्मृति</b> में विवाह के <b>आठ रूप</b> बताए गए हैं (तालिका देखें)। पहले चार धर्म-सम्मत और श्रेष्ठ माने गए; <b>गांधर्व</b> (प्रेम/स्वयंवर) को क्षत्रिय-प्रचलित स्वीकार्यता मिली, जबकि <b>असुर</b> (वधू-मूल्य) और <b>राक्षस</b> (बल-हरण) निंदित, तथा <b>पैशाच</b> सर्वथा वर्जित कहा गया।</p>
+</div>
+</div>
+</div>
+
+<table style="font-size:9.8pt">
+<tr><th style="width:17%">प्रकार</th><th>स्वरूप</th><th style="width:27%">स्थिति</th></tr>
+<tr><td class="c"><b>ब्राह्म</b></td><td>सज्जन वर, सज्जन कन्या — सम्मानपूर्वक संधान</td><td class="c">श्रेष्ठ, धर्म-सम्मत</td></tr>
+<tr><td class="c"><b>दैव</b></td><td>यज्ञ के अवसर पर कन्या-दान</td><td class="c">धर्म-सम्मत</td></tr>
+<tr><td class="c"><b>आर्ष</b></td><td>कन्या के बदले गौ-दम्पति (गाय-बैल)</td><td class="c">स्वीकार्य</td></tr>
+<tr><td class="c"><b>प्राजापत्य</b></td><td>धर्म के लिए, बिना दान-वमन के साधारण विवाह</td><td class="c">स्वीकार्य</td></tr>
+<tr><td class="c"><b>गांधर्व</b></td><td>प्रेम एवं स्वैर (स्वयंवर) से — दोनों की इच्छा</td><td class="c">क्षत्रियों में प्रचलित</td></tr>
+<tr><td class="c"><b>असुर</b></td><td>वधू के परिवार को धन देकर विवाह</td><td class="c">निंदित</td></tr>
+<tr><td class="c"><b>राक्षस</b></td><td>बल-हरण, युद्ध-विजय में वधू-हरण</td><td class="c">कठोर निंदित</td></tr>
+<tr><td class="c"><b>पैशाच</b></td><td>अज्ञान/मूर्च्छा का शोषण</td><td class="c"><b style="color:#b3001b">सर्वथा वर्जित</b></td></tr>
+</table>
+<div class="capt">तालिका 2 : मनुस्मृति में विवाह के आठ रूप (सार)</div>
+
+<div class="two">
+<div class="l">
+<div class="box" style="margin-top:1mm"><span class="bt">अनुलोम और प्रतिलोम</span>
+<ul class="tick" style="margin-top:.8mm;font-size:10.2pt">
+<li><b>अनुलोम</b> : उच्च वर्ण-पुरुष × निम्न वर्ण-स्त्री — <b>अपेक्षाकृत स्वीकार्य</b>, पर संतान का स्तर नीचे गिना जाता।</li>
+<li><b>प्रतिलोम</b> : निम्न वर्ण-पुरुष × उच्च वर्ण-स्त्री — <b class="pt">कठोर निंदित</b>; ब्राह्मण-स्त्री × शूद्र-पुरुष की संतान <b>चंडाल</b> कही गई।</li>
+</ul></div>
+</div>
+<div class="r">
+<div class="box y" style="margin-top:1mm"><span class="bt">गोत्र : ऋषि-नाम की पहचान</span>
+<div style="font-size:10.2pt;line-height:1.52;margin-top:.8mm">गोत्र ऋषियों (कश्यप, वसिष्ठ, भारद्वाज, विश्वामित्र…) के नाम पर — <b>एक ही गोत्र में विवाह वर्जित</b>। पर व्यवहार में विचलन मिलता है : <b>सतवाहन अभिलेखों</b> में स्त्रियों को पिता और माता <b>दोनों गोत्रों</b> से परिचित कराया गया; राजा की उपाधि में <b class="pt">मातृ-गोत्र</b> (गौतमीपुत्र) चमकता है।</div></div>
+</div>
+</div>
+
+<div class="box g" style="margin-top:1.5mm"><span class="bt">क्या आप जानते हैं?</span>
+<div style="font-size:10.4pt;line-height:1.5;margin-top:.8mm"><b>अंतर्विवाह (Endogamy)</b> = अपने ही वर्ण/जाति में विवाह; <b>बहिर्विवाह (Exogamy)</b> = अपने समूह (गोत्र) के बाहर विवाह। यानी नियम कहता था — <b class="pt">जाति में अंदर, गोत्र में बाहर</b>!</div></div>
+
+<div class="pgfoot"><b>8</b> &nbsp;•&nbsp; विवाह की व्यवस्थाएँ</div>
+</div>
+
+<!-- ═══════════════ PAGE 9 : वर्ण-व्यवस्था ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#b3001b"/><circle cx="10" cy="58" r="3.4" fill="#b3001b"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#b3001b"/><circle cx="10" cy="58" r="3.4" fill="#b3001b"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#b3001b"/><circle cx="10" cy="58" r="3.4" fill="#b3001b"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#b3001b"/><circle cx="10" cy="58" r="3.4" fill="#b3001b"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t" style="font-size:17pt">वर्ण-व्यवस्था : चार वर्ण, कर्तव्य और अधिकार</div>
+
+<div class="body">
+<p class="lead"><b class="hd">वर्ण</b> शास्त्रों का <b class="pt">आदर्शिक चार-स्तरीय वर्गीकरण</b> है — ब्राह्मण, क्षत्रिय, वैश्य, शूद्र। धर्मसूत्रों ने हर वर्ण के <b>कर्तव्य</b> तय किए और <b>अधिकार</b> भी असमान रखे। वास्तविक समाज में चलने वाले समूह <b class="pt">जातियाँ</b> कहलाए — जो जन्म और व्यवसाय दोनों से बनती थीं और उनकी संख्या हज़ारों में थी।</p>
+</div>
+
+<table style="font-size:10pt">
+<tr><th>वर्ण</th><th>निर्धारित कर्तव्य (धर्मसूत्र-मनु)</th><th>विशेष अधिकार</th></tr>
+<tr><td class="c"><b style="color:#1a5f9e">ब्राह्मण</b></td><td>अध्ययन-अध्यापन, यज्ञ करना व कराना, दान-प्रतिग्रह</td><td>उपनयन, वेद-अध्ययन, कर-मुक्ति की परंपरा</td></tr>
+<tr><td class="c"><b style="color:#7a3e00">क्षत्रिय</b></td><td>प्रजा-रक्षा, युद्ध, शासन, यज्ञों में यजमान-भूमिका</td><td>राज्य-सत्ता, विषय-भोग</td></tr>
+<tr><td class="c"><b style="color:#155c33">वैश्य</b></td><td>कृषि, पशुपालन, व्यापार, धन-संचय</td><td>उपनयन (व्यवहार में शिथिल)</td></tr>
+<tr><td class="c"><b style="color:#4a2f7a">शूद्र</b></td><td>तीनों वर्णों की सेवा (दासता-प्रकृति)</td><td>उपनयन वर्जित; वेद-अध्ययन वर्जित</td></tr>
+</table>
+<div class="capt">तालिका 3 : चार वर्ण — कर्तव्य एवं अधिकार</div>
+
+<div class="two">
+<div class="l">
+<div class="box y" style="margin-top:1mm"><span class="bt">जन्म बनाम कर्म की बहस</span>
+<div style="font-size:10.3pt;line-height:1.52;margin-top:.8mm">धर्मसूत्रों ने वर्ण का आधार <b class="pt">जन्म</b> ठहराया (वर्ण बदलना असंभव)। जबकि कुछ पाठों में <b>सत्कर्म से वर्ण-सिद्धि</b> की बात भी मिलती है। व्यवहार में वर्ण और जाति के बीच फासला स्पष्ट था — <b>राजा-शासक अक्सर क्षत्रिय दावे से आगे बढ़ते थे</b>।</div></div>
+<div class="box g" style="margin-top:2mm"><span class="bt">शूद्रों पर प्रतिबंध</span>
+<ul class="tick" style="margin-top:.8mm;font-size:10.2pt">
+<li>उपनयन संस्कार (जनेऊ) वर्जित।</li>
+<li>शास्त्रार्थ/वेद-श्रवण की सीमाएँ।</li>
+<li>धर्मसूत्र : प्रातः स्वामी की सेवा हेतु ही उठना — <b>सेवा ही जीवन-धर्म</b>।</li>
+</ul></div>
+</div>
+<div class="r">
+<div class="drw" style="margin:0"><svg viewBox="0 0 150 210" style="width:100%;max-width:60mm">
+  <polygon points="52,10 98,10 108,44 42,44" fill="#cfe6f7" stroke="#1a5f9e" stroke-width="2"/>
+  <text x="75" y="31" font-size="11" text-anchor="middle" fill="#15507f" font-family="Kalam" font-weight="bold">ब्राह्मण</text>
+  <polygon points="40,48 110,48 122,82 28,82" fill="#ffe0b2" stroke="#c96a1a" stroke-width="2"/>
+  <text x="75" y="69" font-size="11" text-anchor="middle" fill="#7a3e00" font-family="Kalam" font-weight="bold">क्षत्रिय</text>
+  <polygon points="26,86 124,86 138,120 12,120" fill="#c6f0d8" stroke="#1e8e4e" stroke-width="2"/>
+  <text x="75" y="107" font-size="11" text-anchor="middle" fill="#155c33" font-family="Kalam" font-weight="bold">वैश्य</text>
+  <polygon points="12,124 138,124 150,158 0,158" fill="#d9c2f0" stroke="#6a3fa0" stroke-width="2"/>
+  <text x="75" y="145" font-size="11" text-anchor="middle" fill="#4a2f7a" font-family="Kalam" font-weight="bold">शूद्र</text>
+  <rect x="30" y="166" width="90" height="34" rx="5" fill="#fff8e3" stroke="#a35400" stroke-width="2"/>
+  <text x="75" y="180" font-size="9.5" text-anchor="middle" fill="#7a3e00" font-family="Kalam" font-weight="bold">वर्ण के बाहर —</text>
+  <text x="75" y="193" font-size="9.5" text-anchor="middle" fill="#b3001b" font-family="Kalam" font-weight="bold">निषाद • चंडाल</text>
+</svg>
+<div class="cap">चित्र 5 : वर्ण-पिरामिड तथा उसके बाहर के समूह</div></div>
+</div>
+</div>
+
+<div class="box" style="margin-top:1.5mm"><span class="bt">मेगस्थनीज की ‘इंडिका’ : बाहरी आँख</span>
+<div style="font-size:10.4pt;line-height:1.55;margin-top:1mm">चंद्रगुप्त मौर्य के दरबार में आए यूनानी राजदूत <b>मेगस्थनीज</b> ने भारतीय समाज को <b class="pt">सात वर्गों</b> (दार्शनिक, कृषक, सैनिक, पशुचारक, शिल्पी, अधिकारी-निरीक्षक, परामर्शदाता) में बाँटा — वर्ण के चार भाग से बिल्कुल भिन्न छवि! उसका मूल ग्रंथ खो गया; उद्धरण बाद के लेखकों (स्ट्रैबो आदि) के माध्यम से मिलते हैं। यह दिखाता है — <b>समाज को देखने के कई तरीके थे, और व्यवस्था ‘चार वर्ण’ से अधिक जटिल थी।</b></div></div>
+
+<div class="pgfoot"><b>9</b> &nbsp;•&nbsp; वर्ण-व्यवस्था</div>
+</div>
+<!-- ═══════════════ PAGE 10 : वर्ण के बाहर ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#155c33" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#155c33" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#155c33" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#155c33" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t" style="font-size:17pt">वर्ण के बाहर : चंडाल और अछूत श्रमिक</div>
+
+<div class="body">
+<p class="lead">शास्त्रीय योजना में जो लोग <b class="pt">चार वर्णों की सीमा के बाहर</b> रखे गए — निषाद, चंडाल आदि — उनके साथ की दूरी समाज की सबसे कड़ी वास्तविकता थी। <b class="hd">मनुस्मृति</b> उनके रहने-खाने-पहनने तक के <span class="mrk">कठोर नियम</span> बाँधती है।</p>
+</div>
+
+<div class="two">
+<div class="l">
+<div class="box y" style="margin-top:1mm"><span class="bt">मनुस्मृति के नियम (भावानुवाद)</span>
+<ul class="tick" style="margin-top:.8mm;font-size:10.2pt">
+<li>चंडाल का निवास <b>गाँव के बाहर</b> अलग बस्ती में हो।</li>
+<li>वस्त्र <b>मृतकों के परित्यक्त</b>, आभूषण <b>लोहे</b> के।</li>
+<li>भोजन <b>टूटे-भग्न पात्रों</b> में करें।</li>
+<li>दिन में बस्ती जाते समय <b>पहचान-चिह्न</b> रखें ताकि लोग दूर रहें।</li>
+<li>कार्य-क्षेत्र : शव-व्यवस्था, चमड़ा, सफाई आदि — <b class="pt">अछूत श्रमिक</b>।</li>
+</ul></div>
+<div class="box" style="margin-top:2mm"><span class="bt">मिश्रित जन्म की कथाएँ</span>
+<div style="font-size:10.2pt;line-height:1.5;margin-top:.8mm">शास्त्रों ने निषाद-चंडाल जैसे समूहों की उत्पत्ति <b>अनुलोम-प्रतिलोम मिश्रित विवाहों</b> से जोड़ी — यानी वर्ण के <b class="pt">आदर्श-नियम</b> ही उनकी सामाजिक वर्जना का बीज बने।</div></div>
+</div>
+<div class="r">
+<div class="drw" style="margin:0"><svg viewBox="0 0 150 130" style="width:100%;max-width:62mm">
+  <rect x="8" y="12" width="82" height="98" rx="6" fill="#eef7ee" stroke="#2e7d32" stroke-width="2"/>
+  <path d="M20 44 v20 l14 -10 l14 10 v-20 Z" fill="#fff8e3" stroke="#a35400" stroke-width="2"/>
+  <path d="M56 44 v20 l14 -10 l14 10 v-20 Z" fill="#fff8e3" stroke="#a35400" stroke-width="2"/>
+  <path d="M22 84 q10 -8 20 0 M60 84 q10 -8 20 0" stroke="#2e7d32" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <text x="48" y="104" font-size="10" text-anchor="middle" fill="#155c33" font-family="Kalam" font-weight="bold">गाँव</text>
+  <path d="M90 60 h18 M108 60 v30" stroke="#7a6a45" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+  <rect x="100" y="92" width="44" height="34" rx="5" fill="#fff2b3" stroke="#a67c00" stroke-width="2"/>
+  <path d="M108 104 v12 l12 -8 l12 8 v-12 Z" fill="#ffe0b2" stroke="#a35400" stroke-width="1.8"/>
+  <text x="122" y="122" font-size="9" text-anchor="middle" fill="#8a6d1f" font-family="Kalam" font-weight="bold">बाहर बस्ती</text>
+  <circle cx="30" cy="22" r="3" fill="#e67e22"/><circle cx="96" cy="18" r="2.6" fill="#b3001b"/>
+</svg>
+<div class="cap">चित्र 6 : गाँव के भीतर आदर — बाहर वर्जना (हस्तचित्रण)</div></div>
+</div>
+</div>
+
+<div class="box g" style="margin-top:1.5mm"><span class="bt">अछूत श्रमिकों का योगदान और दुविधा</span>
+<div style="font-size:10.5pt;line-height:1.55;margin-top:1mm">समाज की <b>सबसे अनिवार्य सेवाएँ</b> — चमड़े का काम, शव-प्रबंध, सफाई, माला-बुनाई — इन्हीं जातियों के हाथों चलती थीं। यानी जो लोग <b class="pt">शहर-गाँव को चालू रखते थे</b>, उन्हीं को सामाजिक दूरी की सबसे कठोर जगह दी गई। शास्त्रों की यह व्यवस्था सदियों तक सामाजिक विषमता की जड़ बनती रही।</div></div>
+
+<div class="quote" style="margin-top:2mm">“ नियम बताते थे कि कौन किसे न छुए — और इसी ‘नहीं’ में ही प्रारंभिक समाज की सबसे अधूरी बंधुता छिपी है। ”</div>
+
+<div class="pgfoot"><b>10</b> &nbsp;•&nbsp; वर्ण के बाहर</div>
+</div>
+
+<!-- ═══════════════ PAGE 11 : श्रमिकों का जीवन ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#1a3c6e"/><circle cx="10" cy="58" r="3.4" fill="#1a3c6e"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#1a3c6e"/><circle cx="10" cy="58" r="3.4" fill="#1a3c6e"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#1a3c6e"/><circle cx="10" cy="58" r="3.4" fill="#1a3c6e"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#e67e22" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#1a3c6e"/><circle cx="10" cy="58" r="3.4" fill="#1a3c6e"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t" style="font-size:17pt">श्रमिकों का जीवन : दास, कर्मकार एवं तमिलकम्</div>
+
+<div class="body">
+<p>शास्त्रों में श्रम शुद्ध वर्ण-बाँट से बाहर था — <b class="hd">दास (dāsa)</b> और <b class="hd">कर्मकार (karmakāra)</b> जैसे शब्द बौद्ध पाठों में बार-बार आते हैं। दास स्वामी के पूर्ण नियंत्रण में था (युद्ध-ऋण-जन्म के कारण बंधुआ; बिक्री भी संभव), जबकि कर्मकार <b class="pt">मजदूरी पर काम करने वाला</b> — आज़ाद पर कठोर जीवन-शर्तों वाला। जातक कथाएँ दासों और श्रमिकों की दैनिक तकलीफों की झलक देती हैं।</p>
+</div>
+
+<div class="drw" style="margin:2mm 0 1mm"><svg viewBox="0 0 240 84" style="width:100mm;height:35mm">
+  <path d="M30 62 h96" stroke="#7a3e00" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 62 L58 52 M58 52 L110 52 L110 62" fill="none" stroke="#a35400" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M110 62 l14 -6 l10 6 Z" fill="#b9c4d0" stroke="#5a6874" stroke-width="2"/>
+  <circle cx="126" cy="66" r="9" fill="#ffd9b3" stroke="#7a3e00" stroke-width="2"/>
+  <circle cx="156" cy="66" r="9" fill="#ffd9b3" stroke="#7a3e00" stroke-width="2"/>
+  <path d="M150 52 q6 -8 12 0 M144 56 q12 -10 24 0" stroke="#c9a227" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M60 52 L66 34 L74 34 L80 52" fill="#fff8e3" stroke="#a35400" stroke-width="2"/>
+  <circle cx="70" cy="30" r="6" fill="#ffd9b3" stroke="#7a3e00" stroke-width="2"/>
+  <path d="M196 40 l-8 26 M204 40 l4 26" stroke="#2e7d32" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M182 70 q14 -10 32 -2 q10 4 16 -2" stroke="#2e7d32" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <text x="196" y="34" font-size="9.5" text-anchor="middle" fill="#155c33" font-family="Kalam" font-weight="bold">धान</text>
+</svg></div>
+<div class="capt">चित्र 7 : हल और धान — श्रम ही समाज का आधार (हस्तचित्रण)</div>
+
+<div class="box" style="margin-top:1mm"><span class="bt">तमिलकम् : दक्षिण की अपनी समाज-छवि</span>
+<div style="font-size:10.6pt;line-height:1.55;margin-top:1mm"><b>संगम साहित्य</b> (लगभग 300 ईसा-पूर्व से 300 ईस्वी) में दक्षिण भारत (<b>तमिलकम्</b>) का समाज उत्तर की वर्ण-जाति चौखट से भिन्न दिखता है — यहाँ समाज का केंद्र <b class="pt">कृषि-उत्पादक वर्ग</b> है। <b>वेल्लाला</b> — भूमि व धान के स्वामी, वस्त्र-प्रयोगकर्ता; <b>उळवर (उज़वर)</b> — हल जोतने वाले श्रमिक, कठोर श्रम व सीमित भोजन। ब्राह्मण उपस्थित थे, पर समाज-ढाँचा <b>उत्पादन और श्रम</b> के घेरे में बना था।</div></div>
+
+<table style="font-size:10pt">
+<tr><th>तुलना</th><th>उत्तर भारत (शास्त्रीय छवि)</th><th>तमिलकम् (संगम छवि)</th></tr>
+<tr><td><b>समाज का आधार</b></td><td>वर्ण — जन्म-आधारित चार स्तर</td><td>कृषि-उत्पादक वर्ग एवं शासक-कुलीन</td></tr>
+<tr><td><b>प्रमुख पद</b></td><td>ब्राह्मण, क्षत्रिय, वैश्य, शूद्र</td><td>वेल्लाला, उळवर, शासक-वेलिर</td></tr>
+<tr><td><b>श्रम-दृष्टि</b></td><td>शूद्र = सेवा-धर्म बाँधा</td><td>श्रमिक — फसल-प्राप्ति के सूत्र में</td></tr>
+</table>
+<div class="capt">तालिका 4 : उत्तर और दक्षिण — समाज देखने की दो दृष्टियाँ</div>
+
+<div class="box y" style="margin-top:1.5mm"><span class="bt">क्या आप जानते हैं?</span>
+<div style="font-size:10.4pt;line-height:1.52;margin-top:.8mm">श्रमिकों में <b>स्त्रियाँ और दास</b> दोनों शामिल थे। शास्त्रों में दास को <b>विक्रय-योग्य</b> बताया गया, जबकि बौद्ध संघ ने भिक्षु-संगठन में जाति-भेद को स्वीकार नहीं किया — <b class="pt">एक ही समाज, दो विरोधी भाषाएँ</b>।</div></div>
+
+<div class="quote" style="margin-top:1.5mm">“ राजा की गद्दी और किसान का हल — दोनों उसी धरती पर टिके थे; बस इतिहास एक को नाम देता रहा, दूसरे को भुलाता रहा। ”</div>
+
+<div class="pgfoot"><b>11</b> &nbsp;•&nbsp; श्रमिकों का जीवन</div>
+</div>
+
+<!-- ═══════════════ PAGE 12 : संन्यासी परंपरा ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a5f9e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a5f9e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a5f9e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a5f9e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#e67e22"/><circle cx="10" cy="58" r="3.4" fill="#e67e22"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t" style="font-size:17pt">जाति-व्यवस्था के बाहर : संन्यासी परंपरा</div>
+
+<div class="two">
+<div class="l" style="flex:1">
+<div class="drw" style="margin:0"><svg viewBox="0 0 130 100" style="width:100%;max-width:54mm">
+  <path d="M30 88 h70 l-10 -18 q-25 -10 -50 0 Z" fill="#eef7ee" stroke="#2e7d32" stroke-width="2.2"/>
+  <path d="M45 70 q20 -34 40 0" fill="#cfe6f7" stroke="#1a5f9e" stroke-width="2.2"/>
+  <path d="M52 70 q18 -26 26 0 Z" fill="#fff8e3" stroke="#1a5f9e" stroke-width="1.6"/>
+  <path d="M65 44 v-8" stroke="#a35400" stroke-width="2.4"/>
+  <circle cx="65" cy="32" r="4" fill="#e67e22"/>
+  <circle cx="24" cy="22" r="9" fill="#cfe6f7" stroke="#1a5f9e" stroke-width="2"/>
+  <path d="M24 31 v10 M18 37 h12" stroke="#1a5f9e" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="108" cy="18" r="2.6" fill="#b3001b"/><circle cx="14" cy="60" r="3" fill="#2e7d32"/>
+</svg></div>
+<div class="cap">चित्र 8 : स्तूप और भिक्षु — संघ का जीवन</div>
+</div>
+<div class="r" style="flex:1.15">
+<div class="body" style="font-size:10.9pt">
+<p style="margin-bottom:1.6mm"><b class="hd">गृहस्थ-वर्ण व्यवस्था के समानांतर</b> एक और जीवन-धारा चलती थी — <b class="pt">तप और संन्यास</b>। उपनिषदों से बौद्ध-जैन <b>श्रमण परंपरा</b> तक, हज़ारों पुरुष-स्त्रियाँ <b>संघ (संगा)</b> में गृह-गोत्र छोड़कर प्रवेश लेती थीं। संघ में सब केवल <b>भिक्षु/भिक्षुणी</b> थे — जन्म की जाति नहीं, <b>कर्म और साधना</b> थी पहचान।</p>
+</div>
+</div>
+</div>
+
+<div class="box y"><span class="bt">संघ की चुनौती — और उसकी सीमा</span>
+<ul class="tick" style="margin-top:1mm">
+<li>संघ में <b>जाति-भेद नहीं</b> — राजकुमार और चरवाहा एक ही पंक्ति में।</li>
+<li>स्त्रियाँ भी संघ में आईं — <b>भिक्षुणियों</b> के पद संग्रहित हुए (<b>थेरीगाथा</b>)।</li>
+<li>पर संघ के <b>बाहर का समाज</b> वैसा ही जातिबद्ध चलता रहा — यह बदलाव व्यक्ति-स्तर तक सीमित।</li>
+</ul></div>
+
+<div class="quote">“ घड़े और ओखली की सेवा से, मोर्चे (मोटे चावल) की खिदमत से — मुक्ति मिली; अब मैं अपना मार्ग स्वयं चुनती हूँ। ”<br><span style="font-size:10pt;color:#7a6a45">— थेरीगाथा की भिक्षुणी <b>मुत्ता</b> का भावानुवाद</span></div>
+
+<div class="box g" style="margin-top:1.5mm"><span class="bt">क्या आप जानते हैं?</span>
+<div style="font-size:10.4pt;line-height:1.52;margin-top:.8mm"><b>थेरीगाथा</b> — संन्यासी <b>स्त्रियों</b> के पदों का बौद्ध संग्रह। इसमें स्त्रियाँ घर की सेवा-परतंत्रता से निकलकर <b>स्वतंत्र अध्ययन-साधना</b> का दर्जा चुनने की बात कहती हैं — प्रारंभिक भारत की <b class="pt">स्त्री-आवाज़ों का दुर्लभ स्रोत</b>।</div></div>
+
+<div class="box" style="margin-top:1.5mm"><span class="bt">समाज के भीतर बाहर</span>
+<div style="font-size:10.5pt;line-height:1.55;margin-top:1mm">संन्यासी व्यवस्था को <b>खारिज नहीं करती थी</b> — वह उसके <b class="pt">बाहर एक वैकल्पिक समाज</b> की कल्पना करती थी। गृहस्थ संसार चलाते रहे, संघ नया बंधुता-मॉडल देता रहा। इन दोनों का साथ-साथ चलना ही प्रारंभिक भारतीय समाज की <b>जटिल संपत्ति</b> है।</div></div>
+
+<div class="pgfoot"><b>12</b> &nbsp;•&nbsp; संन्यासी परंपरा</div>
+</div>
+
+<!-- ═══════════════ PAGE 13 : बेगमपुरा ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t" style="font-size:17pt">बेगमपुरा : अछूतों का सपना — एक कल्पना</div>
+
+<div class="drw" style="margin:2mm 0 1mm"><svg viewBox="0 0 250 96" style="width:104mm;height:40mm">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3d6"/><stop offset="1" stop-color="#ffe0b2"/></linearGradient></defs>
+  <rect x="4" y="4" width="242" height="88" rx="8" fill="url(#sky)" stroke="#c9a227" stroke-width="2"/>
+  <circle cx="34" cy="26" r="9" fill="#ffd9b3" stroke="#e67e22" stroke-width="2.2"/>
+  <path d="M20 84 h210" stroke="#7a6a45" stroke-width="2.4" stroke-linecap="round"/>
+  <rect x="52" y="52" width="26" height="32" fill="#fffdf4" stroke="#1a5f9e" stroke-width="2"/>
+  <rect x="88" y="40" width="30" height="44" fill="#fffdf4" stroke="#1a5f9e" stroke-width="2"/>
+  <path d="M88 40 l15 -12 l15 12" fill="#cfe6f7" stroke="#1a5f9e" stroke-width="2"/>
+  <rect x="128" y="56" width="22" height="28" fill="#fffdf4" stroke="#1a5f9e" stroke-width="2"/>
+  <rect x="158" y="34" width="34" height="50" fill="#fffdf4" stroke="#1a5f9e" stroke-width="2"/>
+  <path d="M158 34 l17 -14 l17 14" fill="#cfe6f7" stroke="#1a5f9e" stroke-width="2"/>
+  <rect x="62" y="60" width="8" height="10" fill="#1a5f9e"/><rect x="96" y="48" width="9" height="12" fill="#1a5f9e"/>
+  <rect x="166" y="42" width="9" height="12" fill="#1a5f9e"/><rect x="182" y="58" width="9" height="12" fill="#1a5f9e"/>
+  <path d="M210 60 q10 -16 18 0 v24 h-18 Z" fill="#c6f0d8" stroke="#1e8e4e" stroke-width="2"/>
+  <text x="125" y="22" font-size="11" text-anchor="middle" fill="#b3001b" font-family="Kalam" font-weight="bold">बेगमपुरा — कोई छू-छल नहीं</text>
+</svg></div>
+<div class="capt">चित्र 9 : कल्पित बेगमपुरा — समता का सपना (हस्तचित्रण)</div>
+
+<div class="body">
+<p><b class="hd">बेगमपुरा</b> चौदहवीं शताब्दी के <b>बंगाल</b> की कविता है — <b>मंगलकाव्य</b> परंपरा में, जिसका रचनाकार <b class="pt">दोम जाति</b> (चमड़े के कार्य से जुड़ी, ‘अछूत’ कही जाती जाति) का कवि है। इसमें कवि उस समाज का सपना देखता है जहाँ वर्जित लोग <b class="pt">स्वयं शासक</b> हों — जहाँ उन्हें सामाजिक प्रतिष्ठा और आर्थिक वैभव <b>अपने अधिकार</b> के रूप में मिले।</p>
+</div>
+
+<div class="box y"><span class="bt">कविता का भावानुवाद</span>
+<div style="font-family:'Tiro Devanagari Hindi',serif;font-size:11.6pt;line-height:1.75;margin-top:1mm;color:#1a3c6e">जिस नगर में हम बसेंगे,<br>वहाँ राज हमारा ही होगा;<br>धान की फसल के बदले वहाँ मोती उगेंगे,<br>हाथी घर आएँगे, वस्त्र-पताका हमारे सिर पर चढ़ेगी —<br>और वहाँ <b style="color:#b3001b">कोई किसे छूने से न रोके</b>।</div>
+<div style="font-size:9.4pt;color:#7a6a45;text-align:center;margin-top:1mm">— बेगमपुरा (14वीं शताब्दी, बंगाल) के अर्थ का सार</div></div>
+
+<div class="two">
+<div class="l">
+<div class="box g" style="margin-top:1mm"><span class="bt">यह कविता क्यों ऐतिहासिक है?</span>
+<ul class="tick" style="margin-top:.8mm;font-size:10.2pt">
+<li>दलित/अछूत समुदाय की <b class="pt">अपनी आवाज़</b> का दुर्लभ स्रोत।</li>
+<li>शास्त्रों की वर्जना-दुनिया के सामने <b>उलटी कल्पना</b> — जहाँ समता स्वाभाविक हो।</li>
+<li>सामाजिक असंतोष का <b>रचनात्मक प्रतिरोध</b> — शिकायत नहीं, विकल्प का सपना।</li>
+</ul></div>
+</div>
+<div class="r">
+<div class="box" style="margin-top:1mm"><span class="bt">इतिहासकार की दृष्टि</span>
+<div style="font-size:10.2pt;line-height:1.52;margin-top:.8mm">यह कविता <b>बताती है कि समाज में क्या ‘नहीं’ था</b> — इसीलिए वह क्या-क्या होना चाहिए था, इसकी परिकल्पना करती है। स्रोत-पढ़ाई का यही कौशल इतिहास को जीवित बनाता है।</div></div>
+</div>
+</div>
+
+<div class="quote" style="margin-top:1.5mm">“ बेगमपुरा सपना ही रहा — पर सपनों को बुनने वाली जाति की आवाज़, इतिहास की सबसे मासूम और सबसे तेज़ चुनौती है। ”</div>
+
+<div class="pgfoot"><b>13</b> &nbsp;•&nbsp; बेगमपुरा : एक कल्पना</div>
+</div>
+
+<!-- ═══════════════ PAGE 14 : स्त्रियाँ, संपत्ति और अधिकार ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#a35400" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#a35400" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#a35400" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#a35400" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t" style="font-size:17pt">स्त्रियाँ, संपत्ति और अधिकार</div>
+
+<div class="two">
+<div class="l">
+<div class="body" style="font-size:10.9pt">
+<p style="margin-bottom:1.6mm"><b class="hd">धर्मशास्त्र की स्त्री-दृष्टि</b> संरक्षण की भाषा में बाध्यकारी नियंत्रण थी — प्रसिद्ध श्लोक के अनुसार <span class="mrk">कौमार-अवस्था में पिता, यौवन में पति, वृद्धावस्था में पुत्र स्त्री का संरक्षण करे; स्त्री स्वतंत्रता की अधिकारिणी न मानी जाए</span>। संपत्ति-उत्तराधिकार की मुख्य धारा भी <b>पुत्रों</b> की ओर बहती थी।</p>
+<p style="margin-bottom:0">पर <b class="pt">अभिलेख</b> एक और चित्र भी दिखाते हैं — राजकुमारियाँ, रानियाँ और दानशील स्त्रियाँ भूमि-दान, संस्था-संरक्षण जैसे कार्यों में <b>सार्वजनिक भूमिका</b> निभाती थीं।</p>
+</div>
+</div>
+<div class="r">
+<div class="drw" style="margin:0"><svg viewBox="0 0 140 104" style="width:100%;max-width:58mm">
+  <ellipse cx="70" cy="56" rx="54" ry="34" fill="#b87333" stroke="#7a3e00" stroke-width="2.4"/>
+  <ellipse cx="70" cy="48" rx="54" ry="30" fill="#d99a5b" stroke="#7a3e00" stroke-width="2.4"/>
+  <path d="M34 44 h72 M34 52 h72 M34 60 h72" stroke="#7a3e00" stroke-width="1.6" opacity=".7"/>
+  <circle cx="70" cy="74" r="7" fill="#fff8e3" stroke="#7a3e00" stroke-width="2"/>
+  <path d="M66 74 h8 M70 70 v8" stroke="#7a3e00" stroke-width="1.6"/>
+  <circle cx="22" cy="20" r="3" fill="#e67e22"/><circle cx="120" cy="16" r="2.6" fill="#b3001b"/>
+</svg>
+<div class="cap">चित्र 10 : ताम्रपत्र (मुहर सहित) — भूमि-दान का दस्तावेज़</div></div>
+</div>
+</div>
+
+<div class="box y"><span class="bt">प्रभावती गुप्ता का ताम्रपत्र — एक ऐतिहासिक वाद</span>
+<table style="margin:1mm 0 0;font-size:10.2pt">
+<tr><td style="width:44%"><b>पहचान</b></td><td>गुप्त सम्राट <b>चंद्रगुप्त द्वितीय</b> की पुत्री; वाकाटक नरेश <b>रुद्रसेन द्वितीय</b> की पत्नी</td></tr>
+<tr><td><b>दस्तावेज़</b></td><td><b>ताम्रपत्र अभिलेख</b> — ग्राम-भूमि का दान (ब्राह्मणों को)</td></tr>
+<tr><td><b>विशेष स्थिति</b></td><td>विधवा होने पर नाबालिग पुत्र हेतु <b>संरक्षक-शासक</b> जैसी भूमिका</td></tr>
+<tr><td><b>ऐतिहासिक प्रश्न</b></td><td>दी गई भूमि <b>प्रभावती की व्यक्तिगत संपत्ति (स्त्रीधन)</b> थी या गुप्त-वाकाटक संबंध की राजनीति? — <b class="pt">विद्वान-बहस जारी</b></td></tr>
+<tr><td><b>निष्कर्ष-संकेत</b></td><td>स्त्रियों की सामाजिक-आर्थिक स्थिति <b>एकरूप नहीं</b> — वर्ग, वंश और स्थिति के अनुसार बदलती थी</td></tr>
+</table></div>
+
+<div class="box" style="margin-top:1.5mm"><span class="bt">आदर्श बनाम व्यवहार — फिर वही टकराव</span>
+<div style="font-size:10.5pt;line-height:1.55;margin-top:1mm">शास्त्र कहता है — स्त्री <b>संरक्षित</b> रहे; अभिलेख कहता है — स्त्री <b class="pt">दान करती है, शासन-संरक्षण सँभालती है</b>। मनु का संरक्षण-सूत्र और प्रभावती का दान-सूत्र साथ पढ़ने पर स्पष्ट होता है : <b>समाज का वास्तविक चेहरा एक स्रोत में नहीं, स्रोतों की बातचीत में</b> झलकता है।</div></div>
+
+<div class="quote" style="margin-top:1.5mm">“ जहाँ शास्त्र ने स्त्री को ‘रक्षा’ की जगह दी, वहीं ताम्रपत्र ने उसे ‘सिक्के’ की जगह दे दी — इतिहास दोनों को सुनना जानता है। ”</div>
+
+<div class="pgfoot"><b>14</b> &nbsp;•&nbsp; स्त्रियाँ, संपत्ति और अधिकार</div>
+</div>
+<!-- ═══════════════ PAGE 15 : समग्र दृष्टि ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t" style="font-size:17pt">समग्र दृष्टि : कालक्रम एवं तुलनात्मक तालिका</div>
+
+<div class="body" style="font-size:10.8pt">
+<p style="margin-bottom:1mm">स्रोतों की बहु-दृष्टि और व्यवस्था की बहु-परती संरचना — दोनों एक ही कालक्रम-पट्टी में सिमट आते हैं। (सभी तिथियाँ लगभग हैं; विद्वानों में भिन्नताएँ हो सकती हैं।)</p>
+</div>
+
+<div class="tl">
+<div class="yr">600 ई.पू.</div><div class="tx">जनपदों से महाजनपद — वर्ण-जाति के प्रश्न <span>शास्त्रीय विचार में सक्रिय</span></div>
+<div class="yr">500 ई.पू.</div><div class="tx">महाभारत-कथा का व्यापक प्रचार <span>— कथा-स्तर इससे भी पुराना</span></div>
+<div class="yr">300 ई.पू.</div><div class="tx">मेगस्थनीज, चंद्रगुप्त मौर्य के दरबार में <span>— ‘इंडिका’ की सात-वर्ग छवि</span></div>
+<div class="yr">3 शती ई.पू.</div><div class="tx">संगम साहित्य-काल (300 ई.पू.–300 ई.) <span>— तमिलकम् का कृषि-आधारित समाज</span></div>
+<div class="yr">2 शती ई.पू.</div><div class="tx">सतवाहन अभिलेख <span>— मातृ-गोत्र (गौतमीपुत्र) का उल्लेख</span></div>
+<div class="yr">400 ई.</div><div class="tx">महाभारत का लिखित संकलन-चरण पूर्ण <span>— लगभग 1000 वर्षों की परतें; 4थी सदी में प्रभावती गुप्ता का ताम्रपत्र</span></div>
+<div class="yr">14 शती</div><div class="tx">बेगमपुरा कविता (बंगाल) <span>— दोम जाति के कवि का समता-सपना</span></div>
+<div class="yr">1919–1966</div><div class="tx">महाभारत का क्रिटिकल एडिशन <span>— BORI पुणे; प्रथम महासंपादक विष्णु एस. सुकथांकर</span></div>
+</div>
+<div class="capt" style="margin-top:1mm">कालक्रम-पट्टी : प्रारंभिक समाज के प्रमुख बिंदु</div>
+
+<table style="font-size:10pt">
+<tr><th style="width:22%">पहलू</th><th>शास्त्र क्या कहते हैं (आदर्श)</th><th>अभिलेख-कथा क्या दिखाते हैं (व्यवहार)</th></tr>
+<tr><td><b>वंश-उत्तराधिकार</b></td><td>पितृसत्ता — पुत्रों को वंश-संपत्ति</td><td>सतवाहन उपाधियों में मातृ-गोत्र (गौतमीपुत्र)</td></tr>
+<tr><td><b>विवाह-नियम</b></td><td>गोत्र में बाहर, वर्ण में भीतर; आठ प्रकार</td><td>द्रौपदी का बहुपत्नी-विवाह; द्वैत-गोत्र परिचय</td></tr>
+<tr><td><b>वर्ण-कर्म बँटवारा</b></td><td>जन्म-नियत चार वर्ण; शूद्र = सेवा</td><td>संघ में जाति-हीन सदस्यता; समाज अधिक जटिल</td></tr>
+<tr><td><b>स्त्री-संपत्ति</b></td><td>संरक्षण की भाषा; स्वतंत्रता-वर्जना</td><td>प्रभावती गुप्ता का भूमि-दान; दानशील स्त्रियाँ</td></tr>
+</table>
+<div class="capt">तालिका 5 : आदर्श बनाम व्यवहार — एक नज़र में</div>
+
+<div class="box y" style="margin-top:1mm"><span class="bt">स्रोत-कौशल की बात</span>
+<div style="font-size:10.4pt;line-height:1.5;margin-top:.8mm">अभिलेख जो करते हैं उसे <b>करने के तथ्य</b> देते हैं, शास्त्र <b>क्या होना चाहिए</b> का नियम देते हैं, कथाएँ <b>कैसे जिया गया</b> की दृश्य-छाया देती हैं। तीनों को मिलाकर ही प्रारंभिक समाज की पूरी तस्वीर बनती है।</div></div>
+
+<div class="pgfoot"><b>15</b> &nbsp;•&nbsp; समग्र दृष्टि</div>
+</div>
+
+<!-- ═══════════════ PAGE 16 : निष्कर्ष ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#1a3c6e" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t">निष्कर्ष</div>
+<div class="rule"><svg viewBox="0 0 200 12"><path d="M0 6 H78 M122 6 H200" stroke="#c9a227" stroke-width="2"/><path d="M100 0 L106 6 L100 12 L94 6 Z" fill="#b3001b"/></svg></div>
+
+<div class="body" style="font-size:11.3pt">
+<p class="lead">इस परियोजना का अध्ययन दिखाता है कि प्रारंभिक भारतीय समाज <b class="hd">नियमों की कठोर जाली</b> भी था और <b class="pt">उस जाली को खुरचती हुई जीवन-चेतना</b> भी। बंधुता, विवाह और वर्ण के शास्त्रीय नियम समाज का ढाँचा बाँधते थे, पर विवाह-प्रकारों की विविधता, मातृ-गोत्र की पहचान, संघ की जाति-हीन सदस्यता और बेगमपुरा जैसी कल्पनाएँ दिखाती हैं कि वास्तविक जीवन कहीं अधिक जटिल और जीवंत था।</p>
+</div>
+
+<div class="box"><span class="bt">प्रमुख निष्कर्ष-बिंदु</span>
+<ul class="tick" style="margin-top:1mm">
+<li><b>पितृसत्ता प्रमुख ढाँचा</b> थी, पर <b>मातृ-पक्ष की पहचान</b> (गोत्र, उपाधि, कथा) पूरी तरह जीवित थी।</li>
+<li>विवाह-नियम <b>आठ प्रकार और अनुलोम-प्रतिलोम</b> की श्रेणियों में बाँधे गए; व्यवहार में विचलन स्वाभाविक थे।</li>
+<li><b>वर्ण</b> शास्त्रीय आदर्श, <b>जाति</b> व्यवहारिक वास्तविकता — और दोनों के बाहर श्रमिक, दास, अछूत तथा संन्यासी।</li>
+<li>स्रोत-पढ़ाई सिखाती है : <b>एक ही वास्तविकता, अनेक दृष्टियाँ</b> — इसीलिए स्रोतों की तुलना ज़रूरी है।</li>
+<li>समता की आवाज़ें (<b>थेरीगाथा, बेगमपुरा</b>) दिखाती हैं कि प्रतिरोध की चेतना प्राचीन भारत में भी पनपी थी।</li>
+</ul></div>
+
+<div class="box g" style="margin-top:2mm"><span class="bt">परियोजना में मेरी सीख</span>
+<div style="font-size:10.6pt;line-height:1.58;margin-top:1mm">यह विषय-क्षेत्र पढ़कर समझ आया कि इतिहास गर्व-कथाओं से नहीं, <b class="pt">प्रश्नों से बड़ा होता है</b> — किसे घर मिला, किसे गाँव के बाहर रहना पड़ा, किसका नाम रिश्ते से लिखा गया और किसका काम से। आज की समाज-व्यवस्था की कई जड़ें यहीं हैं — इसलिए इस अध्ययन का मतलब <b>अतीत और वर्तमान, दोनों से संवाद</b> है।</div></div>
+
+<div class="drw" style="margin-top:3mm"><svg viewBox="0 0 200 56" style="width:86mm;height:24mm">
+  <path d="M70 48 h60 l-6 -18 q-24 -10 -48 0 Z" fill="#fff8e3" stroke="#a35400" stroke-width="2.2"/>
+  <ellipse cx="100" cy="24" rx="9" ry="12" fill="#ffd9b3" stroke="#a35400" stroke-width="2.2"/>
+  <path d="M100 12 q5 3 0 7 M100 19 q-5 3 0 7" stroke="#e67e22" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="100" cy="40" r="3" fill="#e67e22"/>
+  <path d="M40 30 q8 -10 16 0 M144 30 q8 -10 16 0" stroke="#c9a227" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="34" cy="18" r="2.6" fill="#b3001b"/><circle cx="168" cy="16" r="3" fill="#2e7d32"/>
+</svg></div>
+<div class="capt">दीप — ज्ञान की संकेत-भावना (हस्तचित्रण)</div>
+
+<div class="quote" style="margin-top:1mm">“ इतिहास तब जागता है, जब हम उन आवाज़ों को सुनते हैं जिन्हें नियमों ने खामोश रखना चाहा था। ”</div>
+
+<div class="pgfoot"><b>16</b> &nbsp;•&nbsp; निष्कर्ष</div>
+</div>
+
+<!-- ═══════════════ PAGE 17 : संदर्भ सूची ═══════════════ -->
+<div class="page">
+<div class="frame"></div>
+<div class="corner c-tl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 60 60"><path d="M2,58 C2,20 20,2 58,2" fill="none" stroke="#b3001b" stroke-width="3.2" stroke-linecap="round"/><circle cx="58" cy="10" r="3.4" fill="#c9a227"/><circle cx="10" cy="58" r="3.4" fill="#c9a227"/></svg></div>
+
+<div class="pghead"><svg class="dot" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#e67e22" stroke-width="2.4"/><circle cx="10" cy="10" r="3" fill="#b3001b"/></svg><div class="t">बंधुत्व, जाति तथा वर्ग • प्रोजेक्ट फाइल</div><div class="sub">इतिहास • कक्षा 12</div></div>
+
+<div class="sec-t">संदर्भ सूची (Bibliography)</div>
+<div class="rule"><svg viewBox="0 0 200 12"><path d="M0 6 H78 M122 6 H200" stroke="#c9a227" stroke-width="2"/><path d="M100 0 L106 6 L100 12 L94 6 Z" fill="#b3001b"/></svg></div>
+
+<table style="font-size:10.8pt">
+<tr><th style="width:10%">क्रम</th><th>स्रोत / ग्रंथ</th><th style="width:34%">प्रयोग-क्षेत्र</th></tr>
+<tr><td class="c">1</td><td><b>NCERT — इतिहास भाग 1, विषय 3 :</b> बंधुत्व, जाति तथा वर्ग : प्रारंभिक समाज (एक समाज का अध्ययन)</td><td>मुख्य पाठ्य-आधार, स्रोत-विवेचन</td></tr>
+<tr><td class="c">2</td><td><b>महाभारत — क्रिटिकल एडिशन</b> (भंडारकर प्राच्यविद्या अनुसंधान संस्थान, पुणे; 1919–1966; प्रथम महासंपादक : विष्णु एस. सुकथांकर)</td><td>कथा-संरचना, वंश, विवाह के विचलन</td></tr>
+<tr><td class="c">3</td><td><b>मनुस्मृति एवं धर्मसूत्र-परंपरा</b></td><td>विवाह के आठ प्रकार, वर्ण-कर्तव्य, चंडाल-विषयक नियम</td></tr>
+<tr><td class="c">4</td><td><b>सतवाहन अभिलेख</b> (गौतमीपुत्र सातकर्णि आदि) एवं <b>गुप्तकालीन ताम्रपत्र</b> (प्रभावती गुप्ता का दान-पत्र)</td><td>गोत्र-प्रथा, स्त्रियों की संपत्ति</td></tr>
+<tr><td class="c">5</td><td><b>थेरीगाथा</b> — भिक्षुणियों के पद (मुत्ता आदि)</td><td>संन्यासी स्त्रियों की आवाज़</td></tr>
+<tr><td class="c">6</td><td><b>संगम साहित्य</b> (तमिलकम्) — वेल्लाला, उळवर के संदर्भ</td><td>दक्षिण भारत का समाज</td></tr>
+<tr><td class="c">7</td><td><b>मेगस्थनीज की ‘इंडिका’</b> — उद्धरण (स्ट्रैबो आदि द्वारा संरक्षित)</td><td>बाहरी दृष्टि — सात वर्ग की छवि</td></tr>
+<tr><td class="c">8</td><td><b>बेगमपुरा</b> — मंगलकाव्य परंपरा (14वीं शताब्दी, बंगाल)</td><td>अछूत समुदाय की कल्पना-दृष्टि</td></tr>
+</table>
+
+<div class="box y" style="margin-top:4mm"><span class="bt">स्रोत-नोट</span>
+<div style="font-size:10.4pt;line-height:1.55;margin-top:1mm">
+✦ शास्त्र-कथा-कविता के उद्धरण <b>भावानुवाद</b> में हैं; मूल पाठ संक्षिप्तता हेतु सार-रूप में दिया गया है।<br>
+✦ प्राचीन ग्रंथों/अभिलेखों की <b>तिथियाँ लगभग</b> हैं — विद्वानों के बीच मतभेद स्वाभाविक हैं।<br>
+✦ समाज-अध्ययन में यह प्रोजेक्ट <b>पाठ्यपुस्तक-केंद्रित</b> है; विस्तार हेतु संदर्भ-ग्रंथों की सूची उपर्युक्त है।
+</div></div>
+
+<div class="drw" style="margin-top:4mm"><svg viewBox="0 0 220 40" style="width:90mm;height:17mm">
+  <path d="M6 30 q22 -22 44 -2 q22 20 44 -2 q22 -20 44 2 q22 20 44 -2 q16 -12 28 -4" fill="none" stroke="#e67e22" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="10" cy="30" r="3" fill="#b3001b"/><circle cx="212" cy="26" r="3" fill="#b3001b"/>
+  <path d="M96 12 l6 8 M112 10 l-4 9" stroke="#c9a227" stroke-width="2.4" stroke-linecap="round"/>
+</svg></div>
+
+<div style="text-align:center;margin-top:3mm;font-family:'Tiro Devanagari Hindi',serif;font-size:12.5pt;color:#1a3c6e">— समाप्त —</div>
+<div style="text-align:center;font-size:10pt;color:#7a6a45">बंधुत्व, जाति तथा वर्ग : प्रारंभिक समाज • परियोजना फाइल • कक्षा 12</div>
+
+<div class="pgfoot"><b>17</b> &nbsp;•&nbsp; संदर्भ सूची</div>
+</div>
+
+</body>
+</html>
